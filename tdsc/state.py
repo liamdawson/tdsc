@@ -1,22 +1,37 @@
 from __future__ import unicode_literals, absolute_import, print_function
 from abc import ABC, abstractmethod
 
+"""
+Define conventional "state" behaviour.
+
+The simplest state is an object that encapsulates a pre-execution guard,
+``should_execute``, an action to be performed, ``execute``, and a post-execute
+callback and transform, ``post_execute``. By default, ``should_execute`` is
+``True``, and ``post_execute`` returns the result or raised error from
+``execute``, or ``None`` if ``should_execute`` guarded against execution.
+"""
+
 
 class State(ABC):
     def should_execute(self, ctx):
-        raise NotImplemented
+        return True
 
     @abstractmethod
     def execute(self, ctx):
         raise NotImplemented
 
-    def post_execute(self, ctx, result):
+    def post_execute(self, ctx, ran_successfully, result):
         return result
 
     def run(self, ctx):
+        result = None
+        ran_successfully = False
+
         try:
             if self.should_execute(ctx):
                 result = self.execute(ctx)
-                return self.post_execute(ctx, result)
+                ran_successfully = True
         except Exception as err:
-            return err
+            result = err
+        finally:
+            return self.post_execute(ctx, ran_successfully, result)

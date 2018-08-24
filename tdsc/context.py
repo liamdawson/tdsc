@@ -21,5 +21,6 @@ class Context:
     def store(self):
         return self.__store
 
-    def paths_for_state(self, state_name, version=None, roaming=False):
-        return appdirs.AppDirs(state_name, 'tdsc', version=version, roaming=roaming)
+    @staticmethod
+    def paths_for_state(state_name, app_author='tdsc', version=None, roaming=False):
+        return appdirs.AppDirs(state_name, appauthor=app_author, version=version, roaming=roaming)

@@ -1,5 +1,6 @@
 from __future__ import unicode_literals, absolute_import, print_function
 from abc import ABC, abstractmethod
+import logging
 
 """
 Define conventional "state" behaviour.
@@ -13,6 +14,9 @@ callback and transform, ``post_execute``. By default, ``should_execute`` is
 
 
 class State(ABC):
+    def _get_logger(self):
+        return logging.getLogger('tdsc.state.{}'.format(self.__class__.__name__))
+
     def should_execute(self, ctx):
         return True
 
@@ -21,6 +25,9 @@ class State(ABC):
         raise NotImplemented
 
     def post_execute(self, ctx, ran_successfully, result):
+        if not ran_successfully:
+            self._get_logger().exception('State {} did not run successfully.'.format(self.__class__.__name__),
+                                         exc_info=result)
         return result
 
     def run(self, ctx):

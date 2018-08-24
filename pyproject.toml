@@ -14,3 +14,4 @@ appdirs = "^1.4"
 [tool.poetry.dev-dependencies]
 pytest = "^3.0"
 sphinx = "^1.7"
+black = {version = "^18.3-alpha.0", allows-prereleases = true}

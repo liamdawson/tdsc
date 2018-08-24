@@ -48,6 +48,21 @@ pytz = ">=0a"
 
 [[package]]
 category = "dev"
+description = "The uncompromising code formatter."
+name = "black"
+optional = false
+platform = "*"
+python-versions = ">=3.6"
+version = "18.6b4"
+
+[package.dependencies]
+appdirs = "*"
+attrs = ">=17.4.0"
+click = ">=6.5"
+toml = ">=0.9.4"
+
+[[package]]
+category = "dev"
 description = "Python package for providing Mozilla's CA Bundle."
 name = "certifi"
 optional = false
@@ -63,6 +78,15 @@ optional = false
 platform = "*"
 python-versions = "*"
 version = "3.0.4"
+
+[[package]]
+category = "dev"
+description = "A simple wrapper around optparse for powerful command line utilities."
+name = "click"
+optional = false
+platform = "*"
+python-versions = "*"
+version = "6.7"
 
 [[package]]
 category = "dev"
@@ -380,7 +404,7 @@ python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, <4"
 version = "1.23"
 
 [metadata]
-content-hash = "ac9f6ba92e97516924df97dac81986e6c5b7d2c9fb7b4575535431767d09d69e"
+content-hash = "1a14ece0b83e35a84b445323d2a53ab57be3b36d58cf32b903b07666850d6466"
 platform = "*"
 python-versions = ">=2.7,!=3.0,!=3.1,!=3.2,!=3.3,<4"
 
@@ -390,8 +414,10 @@ appdirs = ["9e5896d1372858f8dd3344faf4e5014d21849c756c8d5701f78f8a103b372d92", "
 atomicwrites = ["240831ea22da9ab882b551b31d4225591e5e447a68c5e188db5b89ca1d487585", "a24da68318b08ac9c9c45029f4a10371ab5b20e4226738e150e6e7c571630ae6"]
 attrs = ["4b90b09eeeb9b88c35bc642cbac057e45a5fd85367b985bd2809c62b7b939265", "e0d0eb91441a3b53dab4d9b743eafc1ac44476296a2053b6ca3af0b139faf87b"]
 babel = ["6778d85147d5d85345c14a26aada5e478ab04e39b078b0745ee6870c2b5cf669", "8cba50f48c529ca3fa18cf81fa9403be176d374ac4d60738b839122dfaaa3d23"]
+black = ["22158b89c1a6b4eb333a1e65e791a3f8b998cf3b11ae094adb2570f31f769a44", "4b475bbd528acce094c503a3d2dbc2d05a4075f6d0ef7d9e7514518e14cc5191"]
 certifi = ["4c1d68a1408dd090d2f3a869aa94c3947cc1d967821d1ed303208c9f41f0f2f4", "b6e8b28b2b7e771a41ecdd12d4d43262ecab52adebbafa42c77d6b57fb6ad3a4"]
 chardet = ["84ab92ed1c4d4f16916e05906b6b75a6c0fb5db821cc65e70cbd64a3e2a5eaae", "fc323ffcaeaed0e0a02bf4d117757b98aed530d9ed4531e3e15460124c106691"]
+click = ["29f99fc6125fbc931b758dc053b3114e55c77a6e4c6c3a2674a2dc986016381d", "f15516df478d5a56180fbf80e68f206010e6d160fc39fa508b65e035fd75130b"]
 colorama = ["463f8483208e921368c9f306094eb6f725c6ca42b0f97e313cb5d5512459feda", "48eb22f4f8461b1df5734a074b57042430fb06e1d61bd1e11b078c0fe6d7a1f1"]
 distro = ["224041cef9600e72d19ae41ba006e71c05c4dc802516da715d7fda55ba3d8742", "6ec8e539cf412830e5ccf521aecf879f2c7fcf60ce446e33cd16eef1ed8a0158"]
 docutils = ["02aec4bd92ab067f6ff27a38a38a41173bf01bed8f89157768c1573f53e474a6", "51e64ef2ebfb29cae1faa133b3710143496eca21c530f3f71424d77687764274", "7a4bd47eaf6596e1295ecb11361139febe29b084a87bf005bf899f9a42edc3c6"]

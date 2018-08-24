@@ -55,9 +55,6 @@ setup(
         'six (>=1.11,<1.12)',
         'distro (>=1.3,<2.0)',
         'appdirs (>=1.4,<2.0)',
-        'pytest (>=3.0,<4.0)',
-        'sphinx (>=1.7,<2.0)',
-        'black (>=18.3-alpha.0,<19.0)',
     ],  # Optional
     # https://setuptools.readthedocs.io/en/latest/setuptools.html#dependencies-that-aren-t-in-pypi
     dependency_links=[],  # Optional

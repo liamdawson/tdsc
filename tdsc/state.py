@@ -25,11 +25,14 @@ class State(ABC):
         raise NotImplemented
 
     def post_execute(self, ctx, ran_successfully, result):
-        if not ran_successfully:
+        if not ran_successfully and result is not None:
             self._get_logger().exception(
                 "State {} did not run successfully.".format(self.__class__.__name__),
                 exc_info=result,
             )
+        elif not ran_successfully:
+            self._get_logger().warning("State {} chose not to run.".format(self.__class__.__name__))
+
         return result
 
     def run(self, ctx):
